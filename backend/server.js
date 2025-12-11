@@ -26,10 +26,10 @@ app.set("io", io);
 
 // socket.io events
 io.on("connection", (socket) => {
-  console.log("🟢 Client connected:", socket.id);
+  console.log("Client connected:", socket.id);
 
   socket.on("disconnect", () => {
-    console.log("🔴 Client disconnected:", socket.id);
+    console.log("Client disconnected:", socket.id);
   });
 });
 
@@ -50,6 +50,6 @@ const PORT = process.env.PORT || 5000;
 
 connectDB().then(() => {
   httpServer.listen(PORT, () => {
-    console.log(`🚀 Backend + Socket.io running on port ${PORT}`);
+    console.log(`Backend + Socket.io running on port ${PORT}`);
   });
 });
